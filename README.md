@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img src="Assets/banner.png" alt="LSPDFR+ 2025 Court System Update" />
+</p>
 
 # LSPDFR+ 2025 - Court System Realism Update
 

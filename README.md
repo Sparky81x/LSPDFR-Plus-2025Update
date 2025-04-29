@@ -58,3 +58,17 @@ this update fully modernizes the LSPDFR+ Court System for 2025 and beyond.
 ---
 
 # 📣 Protect and Serve — now with real consequences. 🚓
+
+
+Code & building
+Quite simple, clone the repo, place the below dependencies into a new LSPDFR+/dependencies folder. It should then build without issue.
+
+The code requires some refactoring and optimization work which I do not currently have the time for. If you feel like it, please feel free to contribute by submitting a Pull Request. They may make it into a release and, of course, you'll be credited appropriately. Obviously, feel free to use this as a resource to learn from and improve your programming skills for RPH (credits appreciated, please see licence also if copying/using larger parts of the code).
+
+Developer dependencies
+Albo1125.Common by Albo1125
+British Policing Script by Albo1125
+LSPD First Response by G17 Media
+RAGENativeUI by Alexguirre
+RAGEPluginHook SDK by MulleDK19
+Traffic Policer by Albo1125

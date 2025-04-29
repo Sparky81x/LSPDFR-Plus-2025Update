@@ -50,24 +50,6 @@ this update fully modernizes the LSPDFR+ Court System for 2025 and beyond.
 
 ---
 
-## 📜 Disclaimer
-
-This project is based on the original LSPDFR+ plugin created by Albo1125.
-
-All original work and intellectual property belong to Albo1125.
-
-This update was developed with permission to maintain, expand, and modernize the Court System for compatibility with modern versions of LSPDFR and RagePluginHook.
-
-Only compiled plugin files (DLLs) are publicly distributed.  
-The source code for plugin-side logic is not publicly released.
-
-Respect for the original creator is fully maintained,  
-and no claims of ownership over the original LSPDFR+ project are made.
-
-This project exists to preserve and continue the legacy of essential LSPDFR plugins.
-
----
-
 ## 📜 Credits
 
 - Original Development: **Albo1125**

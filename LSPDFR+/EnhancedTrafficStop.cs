@@ -29,7 +29,19 @@ namespace LSPDFR_
         public static TupleList<Ped, TrafficStopQuestionsInfo> SuspectsTrafficStopQuestionsInfo { get; set; } = new TupleList<Ped, TrafficStopQuestionsInfo>();
 
         public static bool HasShownKeybindHelp { get; set; } = false;
+        public static bool IsSummonsTicket = false;
 
+        private static Ped FindNearbySuspect()
+        {
+            foreach (Ped ped in Game.LocalPlayer.Character.GetNearbyPeds(5))
+            {
+                if (ped.Exists() && !ped.IsPlayer && ped.IsAlive)
+                {
+                    return ped;
+                }
+            }
+            return null;
+        }
 
         public static void PedBackIntoVehicleLogic(Ped suspect, Vehicle suspectvehicle)
         {
@@ -391,25 +403,59 @@ namespace LSPDFR_
             });
         }
 
-        public static void performTicketAnimation()
+        public static void performTicketAnimation(List<Offence> selectedOffences)
         {
-            Game.LocalPlayer.Character.Tasks.Clear();
-            NativeFunction.Natives.TASK_START_SCENARIO_IN_PLACE(Game.LocalPlayer.Character, "CODE_HUMAN_MEDIC_TIME_OF_DEATH", 0, true);
+            try
+            {
+                Game.LocalPlayer.Character.Tasks.Clear();
+                NativeFunction.Natives.TASK_START_SCENARIO_IN_PLACE(Game.LocalPlayer.Character, "CODE_HUMAN_MEDIC_TIME_OF_DEATH", 0, true);
 
-            //Do animation
-            while (!NativeFunction.Natives.IS_PED_ACTIVE_IN_SCENARIO<bool>(Game.LocalPlayer.Character))
-            {
-                GameFiber.Yield();
+                while (!NativeFunction.Natives.IS_PED_ACTIVE_IN_SCENARIO<bool>(Game.LocalPlayer.Character))
+                {
+                    GameFiber.Yield();
+                }
+
+                int Waitcount = 0;
+                while (NativeFunction.Natives.IS_PED_ACTIVE_IN_SCENARIO<bool>(Game.LocalPlayer.Character))
+                {
+                    GameFiber.Yield();
+                    Waitcount++;
+                    if (Waitcount >= 300)
+                    {
+                        Game.LocalPlayer.Character.Tasks.Clear();
+                    }
+                }
+
+                GameFiber.Wait(6000); // Wait a bit after animation
+                Game.LocalPlayer.Character.Tasks.ClearImmediately();
+
+                // 🔥 Summons logic starts here
+                if (IsSummonsTicket)
+                {
+                    // ✅ Small realistic delay before filing court case
+                    int paperworkDelay = new Random().Next(60000, 420000); // 1–7 minutes
+                    GameFiber.Sleep(paperworkDelay);
+
+                    Ped suspect = FindNearbySuspect();
+                    if (suspect.Exists())
+                    {
+                        Persona persona = Functions.GetPersonaForPed(suspect);
+                        Vehicle vehicle = suspect.IsInAnyVehicle(false) ? suspect.CurrentVehicle : null;
+
+                        if (persona != null && selectedOffences != null && selectedOffences.Count > 0)
+                        {
+                            CourtSystem.CreateCourtCase(persona, vehicle, selectedOffences);
+                            Game.DisplayNotification("~b~Court Summons issued.~w~ Case has been filed.");
+                        }
+                    }
+
+                    IsSummonsTicket = false; // reset
+                }
             }
-            int Waitcount = 0;
-            while (NativeFunction.Natives.IS_PED_ACTIVE_IN_SCENARIO<bool>(Game.LocalPlayer.Character))
+            catch (Exception ex)
             {
-                GameFiber.Yield();
-                Waitcount++;
-                if (Waitcount >= 300) { Game.LocalPlayer.Character.Tasks.Clear(); }
+                Game.LogTrivial($"Handled exception in performTicketAnimation: {ex}");
             }
-            GameFiber.Wait(6000);
-            Game.LocalPlayer.Character.Tasks.ClearImmediately();
         }
 
         public TupleList<string, string> CustomQuestionsWithAnswers = new TupleList<string, string>();

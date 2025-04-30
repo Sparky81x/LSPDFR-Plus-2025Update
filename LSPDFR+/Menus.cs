@@ -336,8 +336,9 @@ namespace LSPDFR_
             {
                 if (selectedItem == IssueTicketItem)
                 {
-                    //Issue TOR 
-                                  
+                    bool isCourtSummons = IsCourtSummonsSelected();
+                    EnhancedTrafficStop.IsSummonsTicket = isCourtSummons;
+
                     bool SeizeVehicle = SeizeVehicleTicketCheckboxItem.Checked;
                     if (Functions.IsPlayerPerformingPullover())
                     {
@@ -347,10 +348,11 @@ namespace LSPDFR_
                     {
                         GameFiber.StartNew(delegate
                         {
-                            EnhancedTrafficStop.performTicketAnimation();
+                            EnhancedTrafficStop.performTicketAnimation(CurrentEnhancedTrafficStop.SelectedOffences);
                         });
                     }
 
+                    StatisticsCounter.AddCountToStatistic("Traffic Stop - Tickets Issued", "LSPDFR+");
                     _MenuPool.CloseAllMenus();
                 }
                 else if (selectedItem == TicketOffenceSelectorItem)

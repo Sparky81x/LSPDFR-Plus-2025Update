@@ -28,7 +28,7 @@ namespace LSPDFR_
         public override void Initialize()
         {
             Functions.OnOnDutyStateChanged += Functions_OnOnDutyStateChanged;
-            Game.LogTrivial("LSPDFR+ " + Assembly.GetExecutingAssembly().GetName().Version.ToString() + ", by Albo1125 updated by Sparky for LSPDFR 0.4.9");
+            Game.LogTrivial("LSPDFR+ " + Assembly.GetExecutingAssembly().GetName().Version.ToString() + ", by Albo1125 updated by Sparky for LSPDFR 0.4.9, loaded successfully!");
             Game.LogTrivial("Go on duty to start LSPDFR+.");
             Albo1125.Common.UpdateChecker.VerifyXmlNodeExists(PluginName, FileID, DownloadURL, Path);
             Albo1125.Common.DependencyChecker.RegisterPluginForDependencyChecks(PluginName);
@@ -36,7 +36,7 @@ namespace LSPDFR_
         }
 
         internal static Version Albo1125CommonVer= new Version("6.6.4.0");
-        internal static Version MadeForGTAVersion = new Version("1.0.3504.0");
+        internal static Version MadeForGTAVersion = new Version("1.0.3521.0");
         internal const float MinimumRPHVersion = 0.51f;
         internal static string[] AudioFilesToCheckFor = new string[] { };
         internal static string[] OtherFilesToCheckFor = new string[] {  }; //"Plugins/LSPDFR/LSPDFR+/CourtCases.xml"

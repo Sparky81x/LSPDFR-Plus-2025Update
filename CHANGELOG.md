@@ -1,26 +1,30 @@
 # 📦 Changelog
 
-## LSPDFR+ 2025 - Version 1.9.0.3 – 2025-05-17
+LSPDFR+ 2025 Update - Version 1.9.0.3 2025-05-17
+-------------------------------------
 
-### 🛠 Fixes
-- Fixed crash when switching tabs in the Court System UI
-- Resolved empty offence list causing placeholder exceptions
-- Improved fallback title logic in court result tabs
+🔧 General Compatibility
+- Updated for GTA V version 1.0.3521.0
+- Verified compatibility with LSPDFR 0.4.9 and RagePluginHook >= 0.51
+- Requires Albo1125.Common.dll v6.6.4.0 (included)
 
-### 🧩 Features Restored
-- Full menu system (Court, Ticket, Pursuit, etc.)
-- F9 hotkey toggle with UI rendering
-- Stable `CourtsMenu.Update` handling and tab index resets
+🛠 Fixes & Stability
+- Resolved crash issues when switching tabs in the Court System menu
+- Improved fallback handling for missing or placeholder court entries
+- Fixed offence category logic to avoid null list crashes
 
-### 🔧 Backend Improvements
-- Refactored `Menus.cs` with safety checks and logging
-- Enhanced traffic stop API and court case creation via `Functions.cs`
-- Logging support and integration with `CourtSystem.cs`
+🧩 Restored Features
+- Full court, ticket, and pursuit menus operational again
+- CourtsMenu tab switching, case population, and placeholder UI fallback restored
+- F9 hotkey and CourtsMenu UI refresh now fully functional and crash-resistant
 
-### ✅ Compatibility
-- Supports GTA V version 1.0.3504.0
-- Works with LSPDFR 0.4.9 and RagePluginHook 1.9.3
-- Requires Albo1125.Common.dll (bundled)
+🧪 Backend Improvements
+- Improved logging and dependency validation in Main.cs and Functions.cs
+- Full dependency check integration with Albo1125.Common
+- Cleaned up redundant update logic and stabilized mod initialization
+
+Thank you to the LSPDFR community for your continued support!
+This update is maintained by Sparky81x as an unofficial restoration and enhancement.
 
 ## [1.9.0.2] – 2025-04-30
 

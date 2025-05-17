@@ -1,5 +1,30 @@
 # 📦 Changelog
 
+Traffic Policer 2025 - Version 7.0.0.0
+--------------------------------------
+
+🚨 Full Compatibility Update
+- Updated for GTA V v1.0.3521.0
+- Fully compatible with LSPDFR 0.4.9 and RagePluginHook v0.51+
+- Now requires Albo1125.Common.dll v6.6.4.0
+
+🛠️ Plugin Core Updates
+- Refactored plugin initialization (Main.cs) for stability and clean logging
+- Ensured clean vehicle unlock behavior when plugin unloads
+- Integrated version and dependency validation using Albo1125.Common
+
+🔈 Audio & File Checks
+- Added integrity check for required audio files (Traffic Policer Audio)
+- Ensures files like `OTHER_UNIT_TAKING_CALL_01.wav` and `CRIME_DUI_01.wav` are present
+- Conflicting plugins now flagged automatically (e.g., BreathalyzerRAGE, SpeedRadar)
+
+📌 Notes
+- This update focuses on modernization, compatibility, and loading stability
+- All original gameplay and traffic enforcement features are intact
+- Maintained and released by Sparky81x as an unofficial community-supported version
+
+Thanks for supporting the Traffic Policer community revival!
+
 LSPDFR+ 2025 Update - Version 1.9.0.3 2025-05-17
 -------------------------------------
 

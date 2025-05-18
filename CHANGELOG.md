@@ -1,5 +1,46 @@
 # 📦 Changelog
 
+## [8.0.1] – 2025-05-18
+
+### 🆕 Improvements
+- Added **Ask for ID** option to the **on-foot ticket menu**
+- Players can now disable LSPDFR’s default on-foot interaction menu (`INTERACTION_KEY=None`) to prevent overlap/conflict with LSPDFR+ menus
+
+### 🧠 Behavior Enhancements
+- ID check on foot now displays the ped’s name via an in-game notification, consistent with vehicle stops
+
+### 🔧 Stability
+- Fixed a null reference crash caused by incorrect AskForID menu binding
+- Verified controller and keyboard compatibility
+
+✅ This is a non-breaking patch update. Now using **semantic versioning**
+
+LSPDFR+ 2025 Update - Version 1.9.0.3 2025-05-17
+-------------------------------------
+
+🔧 General Compatibility
+- Updated for GTA V version 1.0.3521.0
+- Verified compatibility with LSPDFR 0.4.9 and RagePluginHook >= 0.51
+- Requires Albo1125.Common.dll v6.6.4.0 (included)
+
+🛠 Fixes & Stability
+- Resolved crash issues when switching tabs in the Court System menu
+- Improved fallback handling for missing or placeholder court entries
+- Fixed offence category logic to avoid null list crashes
+
+🧩 Restored Features
+- Full court, ticket, and pursuit menus operational again
+- CourtsMenu tab switching, case population, and placeholder UI fallback restored
+- F9 hotkey and CourtsMenu UI refresh now fully functional and crash-resistant
+
+🧪 Backend Improvements
+- Improved logging and dependency validation in Main.cs and Functions.cs
+- Full dependency check integration with Albo1125.Common
+- Cleaned up redundant update logic and stabilized mod initialization
+
+Thank you to the LSPDFR community for your continued support!
+This update is maintained by Sparky81x as an unofficial restoration and enhancement.
+
 ## [1.9.0.2] – 2025-04-30
 
 ### Added

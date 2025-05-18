@@ -73,3 +73,5 @@ All source code changes have been made public as required.
 
 Join the official support & update Discord:  
 👉 [https://discord.gg/3E5JyujUXw](https://discord.gg/3E5JyujUXw)
+
+Albos original LSPDFR+ Mod https://github.com/Albo1125/LSPDFRPlus

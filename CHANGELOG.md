@@ -3,8 +3,12 @@
 ## [8.0.1] – 2025-05-18
 
 ### 🆕 Improvements
-- Added **Ask for ID** option to the **on-foot ticket menu**
-- Players can now disable LSPDFR’s default on-foot interaction menu (`INTERACTION_KEY=None`) to prevent overlap/conflict with LSPDFR+ menus
+🆕 You can now ask for ID during on-foot stops via the LSPDFR+ ticket menu (Shift + Q).
+This allows you to avoid using the default E menu, which can overlap with LSPDFR+ menus.
+
+Use E once to stop the ped
+
+Then switch to Shift + Q for all ticketing and interaction via LSPDFR+
 
 ### 🧠 Behavior Enhancements
 - ID check on foot now displays the ped’s name via an in-game notification, consistent with vehicle stops

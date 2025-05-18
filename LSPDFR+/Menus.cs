@@ -16,8 +16,6 @@ using System.Drawing;
 using Rage.Native;
 using RAGENativeUI.PauseMenu;
 using Albo1125.Common.CommonLibrary;
-using LSPDFR_.ExtensionNamespace;
-using LSPD_First_Response.Engine.Scripting.Entities;
 
 namespace LSPDFR_
 {
@@ -38,7 +36,6 @@ namespace LSPDFR_
         private static List<dynamic> OccupantSelector = new List<dynamic>() { "Driver", "Passengers", "All occupants" };
 
         private static UIMenu TicketMenu;
-        private static UIMenuItem AskForIDItemOnFoot;
         private static UIMenuListItem FineItem;
         private static List<string> FineList = new List<string>();
 
@@ -201,9 +198,6 @@ namespace LSPDFR_
             {
                 PointsList.Add(i.ToString());
             }
-
-            AskForIDItemOnFoot = new UIMenuItem("Ask for ID", "Request ID from the nearest ped.");
-            TicketMenu.AddItem(AskForIDItemOnFoot);
             TicketMenu.AddItem(TicketOffenceSelectorItem);
             TicketMenu.AddItem(FineItem = new UIMenuListItem("Fine", "", FineList));
 
@@ -336,26 +330,6 @@ namespace LSPDFR_
                     CurrentEnhancedTrafficStop.OutOfVehicle((EnhancedTrafficStop.OccupantSelector)OutOfVehicleItem.Index);
                     _MenuPool.CloseAllMenus();
                 }
-            }
-            else if (selectedItem == AskForIDItemOnFoot)
-            {
-                GameFiber.StartNew(delegate
-                {
-                    Ped nearest = Game.LocalPlayer.Character.GetNearbyPeds(1).FirstOrDefault();
-                    if (nearest.Exists())
-                    {
-                        nearest.ShowDrivingLicence();
-                        Persona p = Functions.GetPersonaForPed(nearest);
-                        if (p != null)
-                        {
-                            Game.DisplayNotification($"~b~{p.FullName}~w~ shows their ID.");
-                        }
-                    }
-                    else
-                    {
-                        Game.DisplayNotification("~r~No valid ped nearby.");
-                    }
-                });
             }
 
             else if (sender == TicketMenu)

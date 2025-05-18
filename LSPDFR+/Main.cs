@@ -43,9 +43,9 @@ namespace LSPDFR_
         internal static Version RAGENativeUIVersion = new Version("1.9.3");
         internal static Version MadeForLSPDFRVersion = new Version("0.4.9");
 
-        internal const string DownloadURL = "https://www.lcpdfr.com/files/file/11930-lspdfr-improved-pursuit-ai-better-traffic-stops-court-system/";
+        internal const string DownloadURL = "https://www.lcpdfr.com/downloads/gta5mods/scripts/50944-lspdfr-2025-court-system-realism-update/";
 
-        internal const string FileID = "11930";
+        internal const string FileID = "50944";
 
         internal const string PluginName = "LSPDFR+";
         internal const string Path = "Plugins/LSPDFR/LSPDFR+.dll";

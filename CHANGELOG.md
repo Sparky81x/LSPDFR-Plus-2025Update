@@ -1,5 +1,20 @@
 # 📦 Changelog
 
+## [8.0.1] – 2025-05-18
+
+### 🆕 Improvements
+- Added **Ask for ID** option to the **on-foot ticket menu**
+- Players can now disable LSPDFR’s default on-foot interaction menu (`INTERACTION_KEY=None`) to prevent overlap/conflict with LSPDFR+ menus
+
+### 🧠 Behavior Enhancements
+- ID check on foot now displays the ped’s name via an in-game notification, consistent with vehicle stops
+
+### 🔧 Stability
+- Fixed a null reference crash caused by incorrect AskForID menu binding
+- Verified controller and keyboard compatibility
+
+✅ This is a non-breaking patch update. Now using **semantic versioning**
+
 LSPDFR+ 2025 Update - Version 1.9.0.3 2025-05-17
 -------------------------------------
 

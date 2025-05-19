@@ -1,5 +1,28 @@
 # 📦 Changelog
 
+## [8.0.2] – 2025-05-19
+
+### 🧾 Menu Rework & Behavioral Alignment
+
+- Reverted the on-foot menu to match the original intent of LSPDFR+ by Albo1125
+- Removed “Ask for ID” from the Shift + Q menu
+  - Players should now use LSPDFR’s built-in E menu for ID checks and interactions
+- On-foot menu now handles **only citation and summons actions**
+- Cleaned up ped interaction logic to prevent conflicts with LSPDFR’s PedStop system
+
+### 🔧 Stability & Compatibility
+
+- Improved ped behavior after issuing citations on foot
+- Ensured menu actions no longer interfere with LSPDFR-controlled NPCs
+
+---
+
+✅ Fully compatible with:
+- LSPDFR 0.4.9
+- Traffic Policer 2025
+- Arrest Manager 2025
+- PoliceSmartRadio 2025
+
 ## [8.0.1] – 2025-05-18
 
 ### 🆕 Improvements
